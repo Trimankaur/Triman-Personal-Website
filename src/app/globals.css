@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Cozy Light Palette - inspired by warm study rooms */
+  --color-cream: #fdf8f0;
+  --color-cream-dark: #f5ede0;
+  --color-warm-beige: #ebe3d5;
+  --color-soft-brown: #c4a882;
+  --color-muted-brown: #8b7355;
+  --color-deep-brown: #5c4a32;
+
+  /* Accent colors - soft muted pastels */
+  --color-dusty-lavender: #b8a9d4;
+  --color-dusty-purple: #9b8bb4;
+  --color-dusty-purple-light: #d4c8e8;
+  --color-soft-purple: #7c6a9b;
+  --color-muted-blue: #8bafc4;
+  --color-sage-green: #8bb4a0;
+  --color-muted-green: #7bb49b;
+  --color-warm-mustard: #d4b87b;
+  --color-warm-yellow: #e8c97b;
+  --color-dusty-pink: #d4a0b0;
+  --color-soft-peach: #e8c4b0;
+  --color-muted-orange: #d4a07b;
+  --color-muted-teal: #7bb4b4;
+
+  /* Dark mode - cozy night café */
+  --color-dark-bg: #1a1f2e;
+  --color-dark-surface: #222838;
+  --color-dark-card: #2a3142;
+  --color-dark-border: #3a4258;
+  --color-dark-text: #e8e0d4;
+  --color-dark-muted: #9ba4b8;
+  --color-dark-glow: #e8945a;
+  --color-dark-amber: #d4a060;
+  --color-dark-warm: #c47850;
+
+  /* Typography - rounded, friendly */
+  --font-heading: "Nunito", "Quicksand", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #fdf8f0;
+  --foreground: #3d3028;
+  --card: #ffffff;
+  --card-border: #ebe3d5;
+  --card-shadow: rgba(139, 115, 85, 0.08);
+  --muted: #8b7355;
+  --accent: #2e8b9e;
+  --accent-light: #c8e8f0;
+  --glow: rgba(46, 139, 158, 0.1);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #e8e0d4;
+  --card: #1a1a1a;
+  --card-border: #2a2a2a;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --muted: #9ba4b8;
+  --accent: #e0945a;
+  --accent-light: #3a2818;
+  --glow: rgba(224, 148, 90, 0.1);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #d4c8e8;
+  color: #3d3028;
+}
+
+.dark ::selection {
+  background: #4a3f6b;
+  color: #e8e0d4;
+}
+
+/* Cozy button interactions */
+button, a {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Warm glow effect for dark mode */
+.dark .warm-glow {
+  box-shadow: 0 0 40px rgba(232, 148, 90, 0.08), 0 0 80px rgba(212, 160, 96, 0.04);
 }

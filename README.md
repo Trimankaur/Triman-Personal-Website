@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Triman's Learning Journal
+
+A cozy personal learning journal and proof-of-work website for documenting the journey of a self-learner growing alongside AI.
+
+## Tech Stack
+
+- **Next.js 16** — React framework with App Router
+- **Tailwind CSS v4** — Utility-first styling
+- **Framer Motion** — Subtle animations
+- **Supabase** — Database + Authentication
+- **Lucide React** — Icons
+- **Vercel** — Deployment (free tier)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Set up Supabase
+
+1. Create a free project at [supabase.com](https://supabase.com)
+2. Go to the SQL Editor and run the contents of `supabase-schema.sql`
+3. Go to Authentication > Settings and create a user for admin access
+4. Copy your project URL and anon key from Settings > API
+
+### 3. Configure environment variables
+
+Edit `.env.local` with your Supabase credentials:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Page | Path | Description |
+|------|------|-------------|
+| Home | `/` | Hero, quotes, activity graph, recent learnings, curiosities |
+| Learnings | `/learnings` | Searchable archive of all learning entries |
+| Projects | `/projects` | Showcase of things built |
+| Words | `/quotes` | Collection of meaningful quotes |
+| Study Room | `/study-room` | Immersive focus space with timer + ambient visuals |
+| About | `/about` | Personal story |
+| Admin | `/admin` | Private dashboard for adding content |
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Deploy to Vercel for free:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or connect your GitHub repo to Vercel for automatic deployments.
 
-## Deploy on Vercel
+## Design Philosophy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This website feels like a late-night café, a quiet study room, a cozy internet journal. It rewards consistency over perfection and showcases learning publicly without pretending expertise.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Built with curiosity and care.
